@@ -24,12 +24,20 @@
 
 ;; TypescripT
 (defun my/setup-tide-mode ()
-  (interactive)
-  (tide-setup)
-  (flycheck-mode +1)
-  (setq flycheck-check-syntax-automatically '(save mode-enabled))
-  (eldoc-mode +1)
-  (tide-hl-identifier-mode +1)
-  (company-mode +1))
+    (interactive)
+    (tide-setup)
+    (flycheck-mode +1)
+    (setq flycheck-check-syntax-automatically '(save mode-enabled))
+    (eldoc-mode +1)
+    (tide-hl-identifier-mode +1)
+    (company-mode +1))
+
+    (map! :leader
+        (:desc "jump" :prefix "j"
+            :desc "to definition" :n "d" #'tide-jump-to-definition)
+        (:desc "jump" :prefix "j"
+            :desc "back" :n "b" #'tide-jump-back)
+        (:desc "jump" :prefix "j"
+            :desc "to implementation" :n "i" #'tide-jump-to-implementation))
 (setq company-tooltip-align-annotations t)
 (add-hook 'typescript-mode-hook #'my/setup-tide-mode)

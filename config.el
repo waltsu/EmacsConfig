@@ -19,3 +19,5 @@
         :desc "Find in files" :n "s" #'helm-do-ag-project-root))
 
 (setq ruby-insert-encoding-magic-comment nil)
+
+(setq-default flycheck-disabled-checkers '(ruby-rubocop))

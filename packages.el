@@ -5,3 +5,6 @@
 ;; (package! some-package)
 ;; (package! another-package :recipe (:fetcher github :repo "username/repo"))
 ;; (package! builtin-package :disable t)
+
+(package! add-node-modules-path :recipe (:fetcher github :repo "codesuki/add-node-modules-path"))
+(package! prettier-js)

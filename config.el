@@ -11,6 +11,7 @@
 
 ;; Autocompletion
 (set-company-backend! 'ruby-mode' (company-files company-dabbrev-code))
+(set-company-backend! 'rjsx-mode '(company-lsp company-dabbrev-code))
 
 ;; Keybingins
 
@@ -22,6 +23,26 @@
 
 (setq-default flycheck-disabled-checkers '(ruby-rubocop))
 
+;; Javascript
+(require 'flycheck)
+(require 'lsp-mode)
+(require 'lsp-ui)
+(eval-after-load 'javascript-mode
+  '(progn
+     (add-hook 'js2-mode-hook #'add-node-modules-path)))
+(add-hook 'js2-mode-hook 'prettier-js-mode)
+
+(defun my/disable-checkers ()
+(setq-default flycheck-disabled-checkers
+  (append flycheck-disabled-checkers
+    '(javascript-jshint) '(html-tidy))))
+
+(add-hook 'flycheck-mode-hook 'my/disable-checkers)
+
+(add-to-list 'auto-mode-alist '("\\.tsx\\'" . javascript-mode))
+
+(flycheck-add-next-checker 'lsp-ui 'javascript-eslint)
+
 ;; TypescripT
 (defun my/setup-tide-mode ()
     (interactive)
@@ -30,7 +51,7 @@
     (setq flycheck-check-syntax-automatically '(save mode-enabled))
     (eldoc-mode +1)
     (tide-hl-identifier-mode +1)
-    (company-mode +1))
+    (company-mode +1)
     (prettier-js-mode +1))
 
     (map! :leader
@@ -42,3 +63,4 @@
             :desc "to implementation" :n "i" #'tide-jump-to-implementation))
 (setq company-tooltip-align-annotations t)
 (add-hook 'typescript-mode-hook #'my/setup-tide-mode)
+

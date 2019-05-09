@@ -31,6 +31,7 @@
     (eldoc-mode +1)
     (tide-hl-identifier-mode +1)
     (company-mode +1))
+    (prettier-js-mode +1))
 
     (map! :leader
         (:desc "jump" :prefix "j"

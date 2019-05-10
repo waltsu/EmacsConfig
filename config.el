@@ -39,8 +39,6 @@
 
 (add-hook 'flycheck-mode-hook 'my/disable-checkers)
 
-(add-to-list 'auto-mode-alist '("\\.tsx\\'" . javascript-mode))
-
 (flycheck-add-next-checker 'lsp-ui 'javascript-eslint)
 
 ;; TypescripT
@@ -63,4 +61,4 @@
             :desc "to implementation" :n "i" #'tide-jump-to-implementation))
 (setq company-tooltip-align-annotations t)
 (add-hook 'typescript-mode-hook #'my/setup-tide-mode)
-
+(add-to-list 'auto-mode-alist '("\\.tsx$" . typescript-mode))

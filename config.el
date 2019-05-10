@@ -51,14 +51,6 @@
     (tide-hl-identifier-mode +1)
     (company-mode +1)
     (prettier-js-mode +1))
-
-    (map! :leader
-        (:desc "jump" :prefix "j"
-            :desc "to definition" :n "d" #'tide-jump-to-definition)
-        (:desc "jump" :prefix "j"
-            :desc "back" :n "b" #'tide-jump-back)
-        (:desc "jump" :prefix "j"
-            :desc "to implementation" :n "i" #'tide-jump-to-implementation))
 (setq company-tooltip-align-annotations t)
 (add-hook 'typescript-mode-hook #'my/setup-tide-mode)
 (add-to-list 'auto-mode-alist '("\\.tsx$" . typescript-mode))

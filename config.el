@@ -41,7 +41,7 @@
 
 (flycheck-add-next-checker 'lsp-ui 'javascript-eslint)
 
-;; TypescripT
+;; Typescript
 (defun my/setup-tide-mode ()
     (interactive)
     (tide-setup)
@@ -54,3 +54,12 @@
 (setq company-tooltip-align-annotations t)
 (add-hook 'typescript-mode-hook #'my/setup-tide-mode)
 (add-to-list 'auto-mode-alist '("\\.tsx$" . typescript-mode))
+
+
+;; Flow
+(add-hook 'js2-mode-hook 'flow-minor-enable-automatically)
+
+;; Markdown
+(defun my/setup-markdown-mode ()
+  (set-fill-column 1000))
+(add-hook 'markdown-mode-hook 'my/setup-markdown-mode)

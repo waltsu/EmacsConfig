@@ -63,3 +63,7 @@
 (defun my/setup-markdown-mode ()
   (set-fill-column 1000))
 (add-hook 'markdown-mode-hook 'my/setup-markdown-mode)
+
+;; Org mode
+(setq org-agenda-files (list "~/Dropbox/org/todo.org"
+                             "~/Dropbox/org/personal.org"))

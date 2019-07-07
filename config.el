@@ -67,3 +67,6 @@
 ;; Org mode
 (setq org-agenda-files (list "~/Dropbox/org/todo.org"
                              "~/Dropbox/org/personal.org"))
+
+;; Calendar
+(setq calendar-week-start-day 1)

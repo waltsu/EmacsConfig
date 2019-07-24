@@ -16,12 +16,14 @@
 (set-company-backend! 'rjsx-mode '(company-lsp company-dabbrev-code))
 
 ;; Keybingins
-
 (map! :leader
       (:desc "file" :prefix "f"
-        :desc "Find in files" :n "s" #'helm-do-ag-project-root)
-      (:desc "export" :prefix "e"
-        :desc "Org export" :n "o" #'org-export-dispatch))
+        :desc "Find in files" :n "s" #'helm-do-ag-project-root))
+
+(eval-after-load 'org-mode
+  (map! :leader
+        (:desc "export" :prefix "e"
+          :desc "org-export" "o" #'org-export-dispatch)))
 
 (setq ruby-insert-encoding-magic-comment nil)
 

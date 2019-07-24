@@ -2,6 +2,8 @@
 
 ;; Place your private configuration here
 
+(load-file "~/.doom.d/org-exports/flowdock.el")
+
 (setq display-line-numbers-type 'relative)
 (setq-default show-trailing-whitespace t)
 
@@ -17,7 +19,9 @@
 
 (map! :leader
       (:desc "file" :prefix "f"
-        :desc "Find in files" :n "s" #'helm-do-ag-project-root))
+        :desc "Find in files" :n "s" #'helm-do-ag-project-root)
+      (:desc "export" :prefix "e"
+        :desc "Org export" :n "o" #'org-export-dispatch))
 
 (setq ruby-insert-encoding-magic-comment nil)
 

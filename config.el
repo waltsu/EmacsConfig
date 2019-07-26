@@ -76,3 +76,7 @@
 
 ;; Calendar
 (setq calendar-week-start-day 1)
+
+;; Golang
+(eval-after-load 'go-mode
+  (add-hook 'before-save-hook #'gofmt-before-save))

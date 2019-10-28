@@ -66,12 +66,13 @@
 (add-hook 'js2-mode-hook 'flow-minor-enable-automatically)
 
 ;; Markdown
-(defun my/setup-markdown-mode ()
-  (set-fill-column 1000))
-(add-hook 'markdown-mode-hook 'my/setup-markdown-mode)
+;(defun my/setup-markdown-mode ()
+;  (set-fill-column 1000))
+;(add-hook 'markdown-mode-hook 'my/setup-markdown-mode)
 
 ;; Org mode
 (setq org-agenda-files (list "~/Dropbox/org/todo.org"
+                             "~/Dropbox/org/notes.org"
                              "~/Dropbox/org/personal.org"))
 
 ;; Calendar

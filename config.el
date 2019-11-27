@@ -62,9 +62,6 @@
 (add-to-list 'auto-mode-alist '("\\.tsx$" . typescript-mode))
 
 
-;; Flow
-(add-hook 'js2-mode-hook 'flow-minor-enable-automatically)
-
 ;; Markdown
 ;(defun my/setup-markdown-mode ()
 ;  (set-fill-column 1000))

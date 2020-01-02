@@ -78,3 +78,9 @@
 ;; Golang
 (eval-after-load 'go-mode
   (add-hook 'before-save-hook #'gofmt-before-save))
+
+;; Python
+(defun my/setup-company-jedi ()
+  (add-to-list 'company-backends 'company-jedi))
+
+(add-hook 'python-mode-hook 'my/setup-company-jedi)

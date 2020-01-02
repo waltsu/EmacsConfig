@@ -56,11 +56,13 @@
     (eldoc-mode +1)
     (tide-hl-identifier-mode +1)
     (company-mode +1)
-    (prettier-js-mode +1))
+    (prettier-js-mode +1)
+    (unless (member 'javascript-eslint (flycheck-get-next-checkers 'typescript-tide))
+      (flycheck-add-next-checker 'typescript-tide 'javascript-eslint))
+    )
 (setq company-tooltip-align-annotations t)
 (add-hook 'typescript-mode-hook #'my/setup-tide-mode)
 (add-to-list 'auto-mode-alist '("\\.tsx$" . typescript-mode))
-(flycheck-add-next-checker 'typescript-tide 'javascript-eslint)
 
 
 ;; Markdown

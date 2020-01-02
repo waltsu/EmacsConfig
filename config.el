@@ -60,6 +60,7 @@
 (setq company-tooltip-align-annotations t)
 (add-hook 'typescript-mode-hook #'my/setup-tide-mode)
 (add-to-list 'auto-mode-alist '("\\.tsx$" . typescript-mode))
+(flycheck-add-next-checker 'typescript-tide 'javascript-eslint)
 
 
 ;; Markdown

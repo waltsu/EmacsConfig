@@ -90,3 +90,7 @@
   (add-to-list 'company-backends 'company-jedi))
 
 (add-hook 'python-mode-hook 'my/setup-company-jedi)
+
+;; Ruby
+; EnhRuby is slow with large files, use ruby-mode instead
+(add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))

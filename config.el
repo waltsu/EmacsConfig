@@ -63,6 +63,7 @@
     (unless (member 'javascript-eslint (flycheck-get-next-checkers 'typescript-tide))
       (flycheck-add-next-checker 'typescript-tide 'javascript-eslint))
     )
+    (setq tide-tsserver-executable "node_modules/.bin/tsserver")
 (setq company-tooltip-align-annotations t)
 (add-hook 'typescript-mode-hook #'my/setup-tide-mode)
 (add-to-list 'auto-mode-alist '("\\.tsx$" . typescript-mode))

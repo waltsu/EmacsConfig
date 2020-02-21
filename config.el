@@ -20,6 +20,9 @@
       (:desc "file" :prefix "f"
         :desc "Find in files" :n "s" #'helm-do-ag-project-root))
 
+;; Flycheck
+(setq flycheck-check-syntax-automatically '(mode-enabled save))
+
 (eval-after-load 'org-mode
   (map! :leader
         (:desc "export" :prefix "e"

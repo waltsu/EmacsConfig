@@ -48,8 +48,6 @@
 
 (add-hook 'flycheck-mode-hook 'my/disable-checkers)
 
-(flycheck-add-next-checker 'lsp-ui 'javascript-eslint)
-
 ;; Typescript
 (defun my/setup-tide-mode ()
     (interactive)

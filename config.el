@@ -18,7 +18,7 @@
 ;; Keybingins
 (map! :leader
       (:desc "file" :prefix "f"
-        :desc "Find in files" :n "s" #'helm-grep-do-git-grep))
+        :desc "Find in files" :n "s" #'+helm/project-search))
 
 ;; Flycheck
 (setq flycheck-check-syntax-automatically '(mode-enabled save))

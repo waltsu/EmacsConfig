@@ -91,6 +91,9 @@
 
 (add-hook 'python-mode-hook 'my/setup-company-jedi)
 
+(setq-default flycheck-disabled-checkers '(python-pylint))
+(flycheck-add-next-checker 'python-flake8 'python-pycompile)
+
 ;; Ruby
 ; EnhRuby is slow with large files, use ruby-mode instead
 (add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))

@@ -14,6 +14,9 @@
 ;; Autocompletion
 (set-company-backend! 'ruby-mode' (company-files company-dabbrev-code))
 (set-company-backend! 'rjsx-mode '(company-lsp company-dabbrev-code))
+(setq company-tooltip-align-annotations t)
+;; No delay before autocompleting starts
+(setq company-idle-delay 0)
 
 ;; Keybingins
 (map! :leader
@@ -63,7 +66,6 @@
     )
     (setq tide-tsserver-executable "node_modules/.bin/tsserver")
     (setq typescript-indent-level 2)
-(setq company-tooltip-align-annotations t)
 (add-hook 'typescript-mode-hook #'my/setup-tide-mode)
 (add-to-list 'auto-mode-alist '("\\.tsx$" . typescript-mode))
 

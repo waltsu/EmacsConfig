@@ -78,6 +78,7 @@
 ;; Org mode
 (setq org-agenda-files (list "~/Dropbox/org/todo.org"
                              "~/Dropbox/org/notes.org"
+                             "~/Dropbox/org/notes_archived.org"
                              "~/Dropbox/org/personal.org"))
 
 ;; Calendar

@@ -100,3 +100,7 @@
 ;; Ruby
 ; EnhRuby is slow with large files, use ruby-mode instead
 (add-to-list 'auto-mode-alist '("\\.rb$" . ruby-mode))
+
+;; Yaml
+(require 'yaml-mode)
+(add-to-list 'auto-mode-alist '("\\.yml|.yaml\\'" . yaml-mode))

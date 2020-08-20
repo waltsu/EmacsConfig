@@ -12,3 +12,4 @@
 (package! company-jedi)
 (package! virtualenvwrapper)
 (package! terraform-mode)
+(package! yaml-mode)

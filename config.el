@@ -104,3 +104,6 @@
 ;; Yaml
 (require 'yaml-mode)
 (add-to-list 'auto-mode-alist '("\\.yml|.yaml\\'" . yaml-mode))
+
+;; Magit
+(setq git-commit-summary-max-length 80)

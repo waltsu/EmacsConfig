@@ -13,3 +13,4 @@
 (package! virtualenvwrapper)
 (package! terraform-mode)
 (package! yaml-mode)
+(package! ox-slack)
